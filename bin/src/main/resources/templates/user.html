@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Dashboard</title>
+		
+	<style>
+		body{
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #0e2433;
+			color: #fff;
+		}
+		header{
+			background-color: #45b6fe;
+			color: white;
+			padding: 10px;
+			text-align: center;
+		}
+		section{
+			padding: 20px;
+		}
+		
+	</style>
+	</head>
+	
+	<body>
+		<header>
+			<h1>Welcome, [[${user.getName()}]]</h1>
+			<span sec:authorize="isAuthenticated">
+				<a th:href="@{/logout}">
+					Logout
+					 
+				</a>
+			</span>
+		</header>
+		<section>
+			<h2>USER Dashboard</h2>
+			
+		</section>
+		<div class="container">
+	<div class="message" th:if="${message != null}">
+				[[${message}]]
+			</div>
+        <div class="left-section"></div>
+        <div class="right-section">
+			
+            <div class="booking-container">
+                <form class="booking-form"
+			th:action="@{/user-page}" 
+			method="post"
+			role="form"
+			th:object="${booking}">
+                    <h2 class="booking-title"><i class="fas fa-user-circle"></i> Book a cylinder</h2>
+                    <div class="form-control">
+                       <i class="fas fa-user icon" ></i> 
+				<input type="text" id="booking_date" name="booking_date" placeholder="Enter Booking Date yyyy-MM-DD" required>
+			</div>
+			 <div class="form-control">
+                       <i class="fas fa-user icon" ></i> 
+				<input type="text" id="price" name="price" placeholder="Enter Price" required>
+			</div>
+			 <div class="form-control">
+                       <i class="fas fa-user icon" ></i> 
+				<input type="text" id="category" name="category" placeholder="Enter Category" required>
+			</div>
+			<!--
+                    <div class="form-control">
+                       <i class="fa fa-mobile" aria-hidden="true"></i>
+				<input type="tel" id="mobile" name="mobile" placeholder="Enter Your Mobile Number" required>
+			</div>
+			<div class="form-control">
+                      <i class="fa fa-envelope" aria-hidden="true"></i>
+				<input type="email" id="email" name="email" placeholder="Enter Your Email ID" required>
+			</div>
+			<div class="form-control">
+                      <i class="fa fa-key" aria-hidden="true"></i>
+				<input type="password" id="password" name="password" placeholder="Enter Your Password" required>
+			</div>
+			<div class="form-control">
+                     <i class="fa fa-address-card" aria-hidden="true"></i>
+				<input type="text" id="address" name="address" placeholder="Enter Your Address" required>
+			</div> -->
+                    
+                    
+                    <button type="submit">Book</button><br>
+                  <!-- <center> Already have account? <a href="/login">Login</a></center> -->
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+		
+	</body>

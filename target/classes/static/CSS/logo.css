@@ -1,0 +1,16 @@
+
+svg {
+  width:50px;
+  margin-top:1px;
+}
+
+@keyframes flame {
+  from {
+    r:1px;
+    opacity:.8;
+  }
+  to {
+    r:28px;
+    opacity:0;
+  }
+}

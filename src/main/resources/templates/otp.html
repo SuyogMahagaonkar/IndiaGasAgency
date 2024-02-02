@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Registration Form</title>
+		<link rel="stylesheet" th:href="@{../CSS/form.css}">
+	</head>
+	<body>
+	
+<div class="container">
+	<div class="message" th:if="${message != null}">
+				[[${message}]]
+			</div>
+        <div class="left-section"></div>[[${otp}]]
+        <div class="right-section">
+			
+            <div class="login-container">
+                <form class="login-form"
+			th:action="@{/forgotpass/getverified/otp}" 
+			method="post"
+			role="form"
+			th:object="${user}">
+                    <h2 class="login-title"><i class="fas fa-user-circle"></i> OTP Sent on Mail</h2>
+                    
+			<div class="form-control">
+                      <i class="fa fa-envelope" aria-hidden="true"></i>
+				<input type="email" id="email" name="email" placeholder="Enter Your Email ID" required>
+			</div>
+			
+                    
+                    
+                    <button type="submit">check OTP</button><br>
+                 
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+	</body>
+	
+</html>
+	
+	
+	
+	
+	
+	

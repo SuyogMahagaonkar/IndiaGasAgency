@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Registration Form</title>
+		<link rel="stylesheet" th:href="@{../css/form.css}">
+	</head>
+	<body>
+		<!--<div class="registration-form login-container">
+			<div class="message" th:if="${message != null}">
+				[[${message}]]
+			</div>
+			<h2 class="login-title">Registration Form</h2>
+			<form class="login-form"
+			th:action="@{/registration}" 
+			method="post"
+			role="form"
+			th:object="${user}"
+			>
+			<div class="form-group">
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="name" placeholder="Enter Your Name" required>
+			</div>
+			<div class="form-group">
+				<label for="mobile">Mobile:</label>
+				<input type="tel" id="mobile" name="mobile" placeholder="Enter Your Mobile Number" required>
+			</div>
+			<div class="form-group">
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" placeholder="Enter Your Email ID" required>
+			</div>
+			<div class="form-group">
+				<label for="password">Password:</label>
+				<input type="password" id="password" name="password" placeholder="Enter Your Password" required>
+			</div>
+			<div class="form-group">
+				<label for="address">Address:</label>
+				<input type="text" id="address" name="address" placeholder="Enter Your Address" required>
+			</div>
+			<div class="btn"><input type="submit" value="Register"></div>
+			</form>
+		</div>
+		-->
+		
+		
+<div class="container">
+	<div class="message" th:if="${message != null}">
+				[[${message}]]
+			</div>
+        <div class="left-section"></div>
+        <div class="right-section">
+			
+            <div class="login-container">
+                <form class="login-form"
+			th:action="@{/registration}" 
+			method="post"
+			role="form"
+			th:object="${user}">
+                    <h2 class="login-title"><i class="fas fa-user-circle"></i> Register</h2>
+                    <div class="form-control">
+                       <i class="fas fa-user icon" ></i> 
+				<input type="text" id="name" name="name" placeholder="Enter Your Name" required>
+			</div>
+                    <div class="form-control">
+                       <i class="fa fa-mobile" aria-hidden="true"></i>
+				<input type="tel" id="mobile" name="mobile" placeholder="Enter Your Mobile Number" required>
+			</div>
+			<div class="form-control">
+                      <i class="fa fa-envelope" aria-hidden="true"></i>
+				<input type="email" id="email" name="email" placeholder="Enter Your Email ID" required>
+			</div>
+			<div class="form-control">
+                      <i class="fa fa-key" aria-hidden="true"></i>
+				<input type="password" id="password" name="password" placeholder="Enter Your Password" required>
+			</div>
+			<div class="form-control">
+                     <i class="fa fa-address-card" aria-hidden="true"></i>
+				<input type="text" id="address" name="address" placeholder="Enter Your Address" required>
+			</div>
+                    
+                    
+                    <button type="submit">Register</button><br>
+                  <center> Already have account? <a href="/login">Login</a></center>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+	</body>
+	
+</html>
+	
+	
+	
+	
+	
+	
